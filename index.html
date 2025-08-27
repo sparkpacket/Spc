@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Terminal Simulator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="login-overlay" class="overlay">
+    <div class="panel">
+      <h2>Terminal Simulator — Login</h2>
+      <form id="login-form" autocomplete="off">
+        <label>Username
+          <input id="username" name="username" required />
+        </label>
+        <label>Password
+          <input id="password" name="password" type="password" required />
+        </label>
+        <div class="buttons">
+          <button type="submit">Log in</button>
+          <button type="button" id="signup-btn">Sign up</button>
+        </div>
+      </form>
+      <div id="login-msg" class="msg"></div>
+      <p class="hint">Demo account: username <code>sparkpacket</code> password <code>win32</code></p>
+    </div>
+  </div>
+
+  <div id="terminal-app" class="app hidden">
+    <header class="topbar">
+      <div class="title">Terminal Simulator</div>
+      <div class="status" id="status">Not connected</div>
+    </header>
+
+    <main id="screen" class="screen" tabindex="0" aria-live="polite">
+      <div id="output" class="output"></div>
+      <div id="prompt-line" class="prompt-line">
+        <span id="prompt" class="prompt"></span>
+        <input id="cmdline" class="cmdline" autofocus autocomplete="off" spellcheck="false" />
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div>Type "help" for list of commands — Tab completion, Arrow history, Enter to run.</div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
