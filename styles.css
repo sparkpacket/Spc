@@ -1,0 +1,54 @@
+:root{
+  --bg:#0b1020;
+  --panel:#0f1724;
+  --text:#cbd5e1;
+  --accent:#7dd3fc;
+  --muted:#94a3b8;
+  --prompt:#34d399;
+  --shadow: rgba(0,0,0,0.6);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;background:linear-gradient(180deg,#020614 0%, #071025 100%);color:var(--text)}
+a{color:var(--accent)}
+
+.overlay{
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(180deg, rgba(2,6,23,0.7), rgba(2,6,23,0.9));
+  z-index:40;
+}
+
+.panel{
+  width:360px;background:linear-gradient(180deg,var(--panel),#0b1220);padding:20px;border-radius:8px;box-shadow:0 6px 30px var(--shadow);border:1px solid rgba(255,255,255,0.03)
+}
+.panel h2{margin:0 0 12px;font-weight:600;color:var(--accent)}
+.panel label{display:block;font-size:13px;margin:8px 0;color:var(--muted)}
+.panel input{width:100%;padding:8px 10px;margin-top:6px;border-radius:6px;background:#071022;border:1px solid rgba(255,255,255,0.03);color:var(--text);outline:none}
+.buttons{display:flex;gap:8px;margin-top:12px}
+button{background:var(--accent);border:none;padding:8px 10px;color:#022;cursor:pointer;border-radius:6px;font-weight:600}
+button[type="button"]{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)}
+.msg{margin-top:8px;color:#fca5a5;font-size:13px}
+.hint{margin-top:12px;color:var(--muted);font-size:13px}
+
+.app{display:flex;flex-direction:column;height:100vh}
+.hidden{display:none}
+
+.topbar{height:42px;display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.02)}
+.title{font-weight:700;color:var(--accent)}
+.status{color:var(--muted);font-size:13px}
+
+.screen{flex:1;padding:16px;overflow:auto}
+.output{white-space:pre-wrap;font-size:13px;line-height:1.4}
+.prompt-line{display:flex;gap:8px;align-items:center;margin-top:8px}
+.prompt{color:var(--prompt);font-weight:700}
+.cmdline{flex:1;background:transparent;border:none;outline:none;color:var(--text);font-size:14px;padding:6px;caret-color:var(--accent)}
+
+.line{padding:2px 0}
+.line .muted{color:var(--muted)}
+.cmd{color:var(--accent)}
+
+.footer{height:36px;padding:8px 12px;border-top:1px solid rgba(255,255,255,0.02);font-size:13px;color:var(--muted)}
+
+.output .stdin{color:#94a3b8}
+.output .error{color:#fb7185}
+.output .success{color:#86efac}
